@@ -11,18 +11,38 @@ class JuriController extends Controller
     public function dashboard()
     {
         $user = auth()->user();
+
+        // total desain approved
         $totalDesain = Design::where('status', 'approved')->count();
+
+        // sudah dinilai juri ini
         $sudahDinilai = Score::where('juri_id', $user->id)->count();
+
+        // belum dinilai
         $belumDinilai = $totalDesain - $sudahDinilai;
 
-        return view('juri.dashboard', compact('user', 'totalDesain', 'sudahDinilai', 'belumDinilai'));
+        // 🔥 INI YANG KAMU KURANG (WAJIB)
+        $desain = Design::where('status', 'approved')
+                        ->with('user')
+                        ->latest()
+                        ->get();
+
+        return view('juri.dashboard', compact(
+            'user',
+            'totalDesain',
+            'sudahDinilai',
+            'belumDinilai',
+            'desain'
+        ));
     }
 
     public function daftarDesain()
     {
         $user = auth()->user();
+
         $designs = Design::where('status', 'approved')
                         ->with('user')
+                        ->latest()
                         ->get();
 
         $sudahDinilai = Score::where('juri_id', $user->id)
@@ -35,6 +55,7 @@ class JuriController extends Controller
     public function detailDesain(Design $design)
     {
         $user = auth()->user();
+
         $existingScore = Score::where('juri_id', $user->id)
                              ->where('design_id', $design->id)
                              ->first();
@@ -83,6 +104,7 @@ class JuriController extends Controller
     public function penilaianSaya()
     {
         $user = auth()->user();
+
         $scores = Score::where('juri_id', $user->id)
                       ->with('design.user')
                       ->get();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Event Layang-Layang Nusantara 2025')</title>
+    <title>@yield('title', 'Event Layang-Layang Nusantara 2026')</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -140,7 +140,7 @@
     <div class="nav-inner">
         <a href="{{ route('landing') }}" class="nav-logo">
             <div class="nav-logo-icon">🪁</div>
-            <span class="nav-logo-text">LayangFest 2025</span>
+            <span class="nav-logo-text">LayangFest 2026</span>
         </a>
         <div class="nav-links">
             @auth

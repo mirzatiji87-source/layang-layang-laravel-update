@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Upload Desain - LayangFest 2025')
+@section('title', 'Upload Desain - LayangFest 2026')
 @section('content')
 
 @push('styles')

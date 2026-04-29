@@ -22,6 +22,11 @@ Route::get('/galeri', function () {
     return view('galeri');
 })->name('galeri');
 
+Route::get('/download-juknis', function () {
+    $path = public_path('files/juknis.pdf');
+    return response()->download($path, 'Juknis-LayangFest-2026.pdf');
+})->name('download.juknis');
+
 // Auth Routes (dari Breeze)
 require __DIR__.'/auth.php';
 

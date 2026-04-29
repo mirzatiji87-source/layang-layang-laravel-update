@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Dashboard Juri - LayangFest 2025')
+@section('title', 'Dashboard Juri - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -11,76 +11,102 @@
 @endpush
 
 <div class="dashboard-wrapper">
+
     <aside class="sidebar">
         <div class="sidebar-label">Menu Juri</div>
-        <a href="{{ route('juri.dashboard') }}" class="sidebar-item active">
-            <span class="sidebar-item-icon">🏠</span> Beranda
-        </a>
-        <a href="{{ route('juri.desain') }}" class="sidebar-item">
-            <span class="sidebar-item-icon">🎨</span> Daftar Desain
-        </a>
-        <a href="{{ route('juri.penilaian') }}" class="sidebar-item">
-            <span class="sidebar-item-icon">⭐</span> Penilaian Saya
-        </a>
+        <a href="{{ route('juri.dashboard') }}" class="sidebar-item active">🏠 Beranda</a>
+        <a href="{{ route('juri.desain') }}" class="sidebar-item">🎨 Daftar Desain</a>
+        <a href="{{ route('juri.penilaian') }}" class="sidebar-item">⭐ Penilaian Saya</a>
+
         <div style="margin-top:auto;padding-top:32px">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="sidebar-item" style="width:100%;background:none;border:none;cursor:pointer;text-align:left">
-                    <span class="sidebar-item-icon">🚪</span> Keluar
+                    🚪 Keluar
                 </button>
             </form>
         </div>
     </aside>
 
     <main class="dashboard-main">
+
         @if(session('success'))
             <div class="alert alert-success">✅ {{ session('success') }}</div>
         @endif
 
+        {{-- WELCOME --}}
         <div class="welcome-banner">
-            <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:8px">Halo, {{ auth()->user()->name }}! ⭐</div>
-            <div style="font-size:14px;opacity:.85;line-height:1.6">Selamat datang di dashboard juri LayangFest 2025.<br>Selesaikan penilaian sebelum 15 Maret 2025.</div>
+            <div style="font-size:28px;font-weight:800;margin-bottom:8px">
+                Halo, {{ auth()->user()->name }}! ⭐
+            </div>
+            <div style="font-size:14px;opacity:.85;line-height:1.6">
+                Selamat datang di dashboard juri LayangFest 2026.
+            </div>
         </div>
 
+        {{-- STATS --}}
         <div class="stats-grid">
-            <div class="stat-card stat-card-1">
-                <div class="stat-icon" style="background:#dbeafe">📋</div>
-                <div class="stat-label">Total Desain</div>
-                <div class="stat-value">{{ $totalDesain }}</div>
-            </div>
-            <div class="stat-card stat-card-2">
-                <div class="stat-icon" style="background:#dcfce7">✅</div>
-                <div class="stat-label">Sudah Dinilai</div>
-                <div class="stat-value">{{ $sudahDinilai }}</div>
-            </div>
-            <div class="stat-card stat-card-3">
-                <div class="stat-icon" style="background:#fff7ed">⏳</div>
-                <div class="stat-label">Belum Dinilai</div>
-                <div class="stat-value">{{ $belumDinilai }}</div>
-            </div>
+            <div class="stat-card">📋 <div>Total Desain</div><b>{{ $totalDesain }}</b></div>
+            <div class="stat-card">✅ <div>Sudah Dinilai</div><b>{{ $sudahDinilai }}</b></div>
+            <div class="stat-card">⏳ <div>Belum Dinilai</div><b>{{ $belumDinilai }}</b></div>
         </div>
 
         {{-- PROGRESS --}}
         <div class="content-card">
             <div class="content-card-title">Progress Penilaian</div>
-            @php $pct = $totalDesain > 0 ? round(($sudahDinilai/$totalDesain)*100) : 0; @endphp
+
+            @php
+                $pct = $totalDesain > 0 ? round(($sudahDinilai/$totalDesain)*100) : 0;
+            @endphp
+
             <div style="display:flex;justify-content:space-between;margin-bottom:10px">
-                <span style="font-size:14px;color:var(--muted)">{{ $sudahDinilai }} dari {{ $totalDesain }} desain dinilai</span>
-                <span style="font-size:14px;font-weight:800;color:var(--p1)">{{ $pct }}%</span>
+                <span>{{ $sudahDinilai }} / {{ $totalDesain }} dinilai</span>
+                <b>{{ $pct }}%</b>
             </div>
+
             <div style="height:12px;background:#e5e7eb;border-radius:6px;overflow:hidden">
-                <div style="height:100%;width:{{ $pct }}%;background:var(--grad-main);border-radius:6px;transition:width 1s ease"></div>
+                <div style="width:{{ $pct }}%;height:100%;background:linear-gradient(90deg,#0ea5e9,#1e3a5f)"></div>
             </div>
         </div>
 
+        {{-- INFO --}}
         <div class="content-card">
             <div class="content-card-title">📢 Informasi Penilaian</div>
-            <div class="alert alert-info">📋 Mohon selesaikan penilaian sebelum <strong>15 Maret 2025</strong>. Hubungi admin jika ada kendala.</div>
-            <div style="display:flex;gap:12px;margin-top:8px">
-                <a href="{{ route('juri.desain') }}" class="btn btn-primary">🎨 Mulai Menilai</a>
-                <a href="{{ route('juri.penilaian') }}" class="btn btn-secondary">📊 Lihat Penilaian Saya</a>
+            <div class="alert alert-info">
+                Selesaikan penilaian sebelum <b>15 Maret 2026</b>
             </div>
         </div>
+
+        {{-- LIST DESAIN --}}
+        <div class="content-card">
+            <div class="content-card-title">📂 Daftar Desain Peserta</div>
+
+            @if(isset($desain) && $desain->count() > 0)
+
+                @foreach($desain as $d)
+                    <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;padding:12px;border:1px solid #eee;border-radius:12px">
+
+                        <img src="{{ asset('storage/' . $d->image_path) }}"
+                             style="width:100px;height:100px;object-fit:cover;border-radius:10px">
+
+                        <div>
+                            <div style="font-weight:700">
+                                {{ $d->user->name ?? 'Tanpa Nama' }}
+                            </div>
+                            <div style="font-size:13px;color:gray">
+                                {{ $d->title ?? 'Tanpa Judul' }}
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            @else
+                <div style="color:gray">Belum ada desain yang diupload.</div>
+            @endif
+
+        </div>
+
     </main>
 </div>
 @endsection

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Juknis - LayangFest 2025')
+@section('title', 'Juknis - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -50,7 +50,7 @@
         <div style="background:var(--grad-sky);border-radius:20px;padding:32px;color:#fff;display:flex;align-items:center;gap:24px;margin-bottom:28px">
             <div style="font-size:56px;flex-shrink:0">📄</div>
             <div>
-                <h3 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:8px">Juknis Lomba 2025</h3>
+                <h3 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:8px">Juknis Lomba 2026</h3>
                 <p style="opacity:.85;font-size:14px;line-height:1.6;margin-bottom:16px">Unduh petunjuk teknis lengkap berisi semua informasi yang kamu butuhkan.</p>
                 <a href="#" class="btn" style="background:rgba(255,255,255,.2);color:#fff;border:1.5px solid rgba(255,255,255,.4)">⬇️ Download PDF</a>
             </div>

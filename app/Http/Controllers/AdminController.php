@@ -92,10 +92,11 @@ class AdminController extends Controller
 
     public function penilaian()
     {
-        $designs = Design::where('status', 'approved')
-                        ->with('user', 'scores')
-                        ->get()
-                        ->sortByDesc(fn($d) => $d->scores->avg('final_score'));
+         $designs = Design::where('status', 'approved')
+                    ->with('user', 'scores')
+                    ->get()
+                    ->sortByDesc(fn($d) => $d->scores->avg('final_score'))
+                    ->values();
 
         return view('admin.penilaian', compact('designs'));
     }
@@ -106,7 +107,9 @@ class AdminController extends Controller
                         ->with('user', 'scores')
                         ->get()
                         ->sortByDesc(fn($d) => $d->scores->avg('final_score'))
+                        ->values()
                         ->take(3);
+
 
         return view('admin.juara', compact('designs'));
     }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Pengumuman Juara - LayangFest 2025')
+@section('title', 'Pengumuman Juara - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -38,7 +38,7 @@
     <div class="page-hero-content">
         <div style="font-size:56px;margin-bottom:16px">🏆</div>
         <h1 class="page-hero-title">Pengumuman Juara</h1>
-        <p class="page-hero-sub">Festival Layang-Layang Nusantara 2025</p>
+        <p class="page-hero-sub">Festival Layang-Layang Nusantara 2026</p>
         @if(\Illuminate\Support\Facades\Cache::get('juara_published'))
             <span class="badge badge-green" style="margin-top:16px;font-size:13px;padding:8px 20px">✅ Pengumuman Resmi</span>
         @else
@@ -63,7 +63,7 @@
             <div style="font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--dark);letter-spacing:-1px;margin-bottom:12px">
                 🎉 Selamat kepada Para <span class="grad-text">Pemenang!</span>
             </div>
-            <p style="color:var(--muted);font-size:16px">Festival Layang-Layang Nusantara 2025</p>
+            <p style="color:var(--muted);font-size:16px">Festival Layang-Layang Nusantara 2026</p>
         </div>
 
         <div class="podium-grid">
@@ -119,7 +119,7 @@
         <p class="pending-sub">Juri sedang menilai seluruh desain yang masuk. Pengumuman juara akan diterbitkan setelah proses selesai.</p>
         <div class="countdown-card">
             <div style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Estimasi Pengumuman</div>
-            <div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">25 Maret 2025</div>
+            <div style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">25 Maret 2026</div>
             <div style="margin-top:20px">
                 <a href="{{ route('info') }}" class="btn btn-primary" style="width:100%;justify-content:center">ℹ️ Lihat Info Lomba</a>
             </div>

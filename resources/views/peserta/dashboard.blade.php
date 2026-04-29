@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Dashboard Peserta - LayangFest 2025')
+@section('title', 'Dashboard Peserta - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -53,7 +53,7 @@
 
         <div class="welcome-banner">
             <div class="welcome-title">Halo, {{ auth()->user()->name }}! 👋</div>
-            <div class="welcome-sub">Selamat datang di dashboard peserta LayangFest 2025.<br>Upload desain terbaikmu dan raih hadiah 25 juta rupiah!</div>
+            <div class="welcome-sub">Selamat datang di dashboard peserta LayangFest 2026.<br>Upload desain terbaikmu dan raih hadiah 25 juta rupiah!</div>
         </div>
 
         {{-- STATS --}}
@@ -114,8 +114,8 @@
         {{-- PENGUMUMAN --}}
         <div class="content-card">
             <div class="content-card-title">📢 Pengumuman</div>
-            <div class="alert alert-info">🔔 Pendaftaran dibuka hingga 28 Februari 2025. Segera upload desain terbaik Anda!</div>
-            <div class="alert" style="background:#fef9c3;color:#92400e;border:1.5px solid #fde047">⏰ Penilaian dimulai 1 Maret 2025. Pastikan desain sudah terupload sebelum batas waktu.</div>
+            <div class="alert alert-info">🔔 Pendaftaran dibuka hingga 28 Februari 2026. Segera upload desain terbaik Anda!</div>
+            <div class="alert" style="background:#fef9c3;color:#92400e;border:1.5px solid #fde047">⏰ Penilaian dimulai 1 Maret 2026. Pastikan desain sudah terupload sebelum batas waktu.</div>
         </div>
 
         {{-- QUICK ACTIONS --}}

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Info Lomba - LayangFest 2025')
+@section('title', 'Info Lomba - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -28,7 +28,7 @@
     <div style="text-align:center;position:relative;z-index:2;padding:60px 32px">
         <div style="font-size:52px;margin-bottom:16px">📋</div>
         <h1 style="font-family:'Syne',sans-serif;font-size:clamp(40px,7vw,72px);font-weight:800;color:#fff;letter-spacing:-2px;margin-bottom:12px">Info Lomba</h1>
-        <p style="font-size:16px;color:rgba(255,255,255,.55)">Panduan lengkap Festival Layang-Layang Nusantara 2025</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.55)">Panduan lengkap Festival Layang-Layang Nusantara 2026</p>
     </div>
 </div>
 
@@ -40,7 +40,7 @@
             {{-- Tentang Lomba --}}
             <div class="content-card">
                 <h3 style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:16px;color:var(--dark)">Tentang Lomba</h3>
-                <p style="color:var(--muted);line-height:1.8;margin-bottom:12px">Festival Layang-Layang Nusantara 2025 merupakan ajang kompetisi desain layang-layang tingkat nasional yang diselenggarakan untuk melestarikan dan mengembangkan seni budaya layang-layang di Indonesia.</p>
+                <p style="color:var(--muted);line-height:1.8;margin-bottom:12px">Festival Layang-Layang Nusantara 2026 merupakan ajang kompetisi desain layang-layang tingkat nasional yang diselenggarakan untuk melestarikan dan mengembangkan seni budaya layang-layang di Indonesia.</p>
                 <p style="color:var(--muted);line-height:1.8">Peserta diundang untuk merancang layang-layang dengan kreativitas tinggi, menggabungkan unsur tradisional dan modern dalam sebuah karya yang memukau.</p>
             </div>
 
@@ -71,25 +71,25 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">01 Jan – 28 Feb 2025</div>
+                        <div class="timeline-date">01 Jan – 28 Feb 2026</div>
                         <div class="timeline-title">Pendaftaran Peserta</div>
                         <div class="timeline-desc">Registrasi akun dan upload desain layang-layang</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">01 – 15 Mar 2025</div>
+                        <div class="timeline-date">01 – 15 Mar 2026</div>
                         <div class="timeline-title">Proses Penilaian</div>
                         <div class="timeline-desc">Juri menilai seluruh desain yang masuk</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">20 Mar 2025</div>
+                        <div class="timeline-date">20 Mar 2026</div>
                         <div class="timeline-title">Pengumuman Finalis</div>
                         <div class="timeline-desc">Pengumuman 10 besar finalis lomba</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot" style="background:var(--grad-warm)"></div>
-                        <div class="timeline-date" style="color:var(--a1)">25 Mar 2025</div>
+                        <div class="timeline-date" style="color:var(--a1)">25 Mar 2026</div>
                         <div class="timeline-title">🏆 Pengumuman Juara</div>
                         <div class="timeline-desc">Juara 1, 2, dan 3 diumumkan secara resmi</div>
                     </div>
@@ -102,7 +102,7 @@
                 <div>
                     <h3 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:8px">Petunjuk Teknis (Juknis)</h3>
                     <p style="opacity:.85;font-size:14px;line-height:1.6;margin-bottom:16px">Unduh juknis lengkap berisi panduan format desain, syarat peserta, aturan lomba, dan ketentuan penilaian.</p>
-                    <a href="#" class="btn" style="background:rgba(255,255,255,.2);color:#fff;border:1.5px solid rgba(255,255,255,.4)">⬇️ Download PDF</a>
+                    <a href="{{ route('download.juknis') }}" class="btn" style="background:rgba(255,255,255,.2);color:#fff;border:1.5px solid rgba(255,255,255,.4)">⬇️ Download PDF</a>
                 </div>
             </div>
         </div>

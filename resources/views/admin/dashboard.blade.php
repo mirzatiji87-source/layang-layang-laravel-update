@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Dashboard Admin - LayangFest 2025')
+@section('title', 'Dashboard Admin - LayangFest 2026')
 @section('content')
 
 @push('styles')
@@ -50,7 +50,7 @@
 
         <div class="welcome-banner">
             <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:8px">Admin Dashboard 🛡️</div>
-            <div style="font-size:14px;opacity:.85;line-height:1.6">Kelola seluruh data lomba LayangFest 2025 dari sini.</div>
+            <div style="font-size:14px;opacity:.85;line-height:1.6">Kelola seluruh data lomba LayangFest 2026 dari sini.</div>
         </div>
 
         <div class="stats-grid">
